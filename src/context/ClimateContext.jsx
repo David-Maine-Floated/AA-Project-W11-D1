@@ -4,9 +4,9 @@
 import { createContext, useContext, useState } from "react";
 
 export const ClimateContext = createContext();
-export const useClimateTheme = useContext(ClimateContext);
+export const useClimateTheme = () => useContext(ClimateContext);
 
-export default function ClimateThemeProvider({children}) {
+export default function ClimateThemeProvider({ children }) {
     const [temperature, setTemperature] = useState(50);
 
     return (
