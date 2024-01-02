@@ -5,14 +5,14 @@ import { useClimateTheme } from '../../context/ClimateContext';
 
 
 function Thermometer() {
-  let {temperature, setTemperature} = useClimateTheme()
+  let {temperature, setTemperature, desiredTemperature, setDesiredTemperature} = useClimateTheme()
   return (
     <section>
       <h2>Thermometer</h2>
-      <div className="actual-temp">Actual Temperature: {"x"}°F</div>
+      <div className="actual-temp">Actual Temperature: {temperature}°F</div>
       <ReactSlider
-        value={temperature}
-        onAfterChange={(val) => {setTemperature(val)}}
+        value={desiredTemperature}
+        onAfterChange={(val) => {setDesiredTemperature(val)}}
         className="thermometer-slider"
         thumbClassName="thermometer-thumb"
         trackClassName="thermometer-track"
