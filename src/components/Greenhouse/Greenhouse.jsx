@@ -4,13 +4,18 @@ import './Greenhouse.css';
 
 import LightSwitch from './LightSwitch';
 import ClimateStats from './ClimateStats';
+import { useTheme } from '../../context/ThemeContext';
 
 function Greenhouse() {
+
+  console.log(useTheme)
+
+  const {themeName, setThemeName} = useTheme()
 
   return (
     <section>
       <img  className='greenhouse-img'
-            src={dayImage}
+            src={themeName === 'day' ? dayImage : nightImage}
             alt='greenhouse' 
       />
       <LightSwitch />
